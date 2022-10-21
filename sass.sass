@@ -1,0 +1,73 @@
+[if dark]
+    @self {
+        --borer-color: #0000001a;
+        --shadow-color: #ffffff;
+    }
+[else]
+    @self {
+        --border-color: #00000002;
+        --shadow-color: #00000030;
+    }
+[endif]
+
+* {
+    box-sizing: border-box;
+    font-family: "Tajawal", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.pos {
+    &-1 {
+        left: 60%;
+        top: 70%;
+    }
+    &-2 {
+        left: 5%;
+        top: 50%;
+    }
+    &-3 {
+        left: 80%;
+        top: 20%;
+    }
+}
+
+.hov:hover {
+    h1 {
+        color: rgb(168 85 247 / 1);
+    }
+    svg {
+        fill: rgb(168 85 247 / 1);
+    }
+}
+
+.shad > div {
+    box-shadow: 0px 10px 20px -20px var(--shadow-color);
+}
+
+.show {
+    img {
+        object-position: center;
+    }
+    div {
+        border: 1px solid var(--border-color);
+        box-shadow: 0px 10px 20px -12px var(--shadow-color);
+    }
+}
+
+@media.md {
+    .show div {
+        &:nth-of-type(odd) {
+            position: relative;
+            top: -6rem !important;
+        }
+        width: calc(50% - 2rem);
+    }
+}
+
+@media.lg {
+    .show div {
+        width: calc(50% - 3rem);
+    }
+}
